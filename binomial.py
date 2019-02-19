@@ -11,11 +11,11 @@ def nCr(p,q):            #combination of n-elements by k-range, where n=p and k=
     else:
         return ((f(p))//(f(p-q)*f(q)))
 
-a = str(input('Insert addend 1 --> '))
-b = str(input('Insert addend 2 --> '))
-n = int(input('Insert n -->'))
-nvalues = [] #n-values container
-kvalues = [] #k-values container
+a = str(input('insert addent #1 --> '))
+b = str(input('insert addent #2 --> '))
+n = int(input('insert n -->'))
+nvalues = [] #n-values list
+kvalues = [] #k-values list
 k = 0
 k1 = k-1
 n1=n+1
@@ -23,25 +23,27 @@ n1=n+1
 print('\n','   Traceback data: ')
 print('\n    ', '(',a, '+',b, ')','^',n,'\n')
 print('-----------------------')
-  #n-values calculation
+
+#n-values calculation
 while n1 > 0:
     n1 = n1-1
     print('n: ', n1)
     nvalues.append(n1)
 
 print('-----------------------')
-  #k-values calculation
+#k-values calculation
 while k1 < n:
     k1 = k1+1
     print('k: ', k1)
     kvalues.append(k1)
 
-print('-----------------------')
-  #printing n-values and k-values
-print('n values: ', nvalues)
-print('k values: ', kvalues)
+#print('-----------------------')
+#printing n-values and k-values
+#print('n values: ', nvalues)
+#print('k values: ', kvalues)
 
 print('-----------------------')
+
 #binomial coefficients calculation
 i = n+1
 l = -1
@@ -53,15 +55,24 @@ while i>0 and l<=n+1:
     Bc.append(x)
     print('binomial coefficient', '(',l+1,')' ' = ', x, '\n')
 
+#print('-----------------------')
+#print('binomial coefficient values:\n', Bc)
 print('-----------------------')
-  #monomial assembly
+
+#generate list of monomials
 monomial = []
 z=n+1
 m=-1
 while z>0 and m<=n+1:
     z=z-1
     m=m+1
-    mon = str(Bc[m]) + str(a) + str('^') + str(nvalues[m])+ str(' * ') + str(b) + str('^') + str(kvalues[m])
+    mon = str('(') + str(Bc[m]) + str(a) + str('^') + str(nvalues[m])+ str(' * ') + str(b) + str('^') + str(kvalues[m])+str(')')
     print('monomial(',m+1,') =',mon,'\n')
     monomial.append(mon)
-#print('\n\n',monomial)
+
+#result output
+print('\nRESULT:\n')
+for o in monomial:
+    print(o, end = ' + ')
+
+print('\n\n')
