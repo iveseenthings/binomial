@@ -11,8 +11,8 @@ def nCr(p,q):            #combination of n-elements by k-range, where n=p and k=
     else:
         return ((f(p))//(f(p-q)*f(q)))
 
-a = str(input('insert addent #1 --> '))
-b = str(input('insert addent #2 --> '))
+a = str('(') + str(input('insert addent #1 --> '))+ str(')')
+b = str('(') + str(input('insert addent #2 --> '))+ str(')')
 n = int(input('insert n -->'))
 nvalues = [] #n-values list
 kvalues = [] #k-values list
